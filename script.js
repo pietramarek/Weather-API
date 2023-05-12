@@ -13,8 +13,9 @@ document.getElementById("btn").addEventListener("click", async () => {
 
     document.getElementById("weather").innerHTML = data.weather[0].description;
     document.getElementById("temp").innerHTML =
-      Math.round(data.main.temp) + "°C";
-    document.getElementById("wind").innerHTML = data.wind.speed;
+      "Temperatura: " + Math.round(data.main.temp) + "°C";
+    document.getElementById("wind").innerHTML =
+      "Wind speed: " + data.wind.speed;
   } catch (error) {
     console.error(error);
   }

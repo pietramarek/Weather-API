@@ -4,13 +4,29 @@ body {
   background-color: #289bd0b0;
   width: 50vw;
   height: 50vh;
+  display: fixed;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 .container {
   background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  box-shadow: #422800 4px 4px 0 0;
+  color: #422800;
 }
 #city {
-  border: 2px solid #ccc;
-  border-radius: 10px;
+  border-radius: 2px;
+  width: auto;
+  height: auto;
+  box-shadow: #422800 2px 2px 0 0;
+  color: #422800;
 }
 
 #btn {
