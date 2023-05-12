@@ -6,16 +6,14 @@ const result = document.getElementById("result");
 document.getElementById("btn").addEventListener("click", async () => {
   try {
     const response = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${cityName.value}&appid=${API_KEY}&lang=pl&units=metric`
+      `https://api.openweathermap.org/data/2.5/weather?q=${cityName.value}&lang=pl&units=metric&appid=${API_KEY}`
     );
     const data = await response.json();
     console.log(data);
 
-    document.getElementById("city").innerHTML = data;
     document.getElementById("weather").innerHTML = data.weather[0].description;
     document.getElementById("temp").innerHTML =
       Math.round(data.main.temp) + "°C";
-    document.getElementById("cloud").innerHTML = data.weather[0].main;
     document.getElementById("wind").innerHTML = data.wind.speed;
   } catch (error) {
     console.error(error);
