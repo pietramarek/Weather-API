@@ -13,7 +13,8 @@ document.getElementById("btn").addEventListener("click", async () => {
 
     document.getElementById("city").innerHTML = data;
     document.getElementById("weather").innerHTML = data.weather[0].description;
-    document.getElementById("temp").innerHTML = data.main.temp;
+    document.getElementById("temp").innerHTML =
+      Math.round(data.main.temp) + "°C";
     document.getElementById("cloud").innerHTML = data.weather[0].main;
     document.getElementById("wind").innerHTML = data.wind.speed;
   } catch (error) {
