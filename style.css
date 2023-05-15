@@ -1,11 +1,7 @@
 body {
-  margin: 10px;
-  padding: 0;
   background-color: #289bd0b0;
   width: 50vw;
   height: 50vh;
-  display: fixed;
-  justify-content: center;
   align-items: center;
   text-align: center;
   margin: auto;
@@ -15,16 +11,25 @@ body {
   bottom: 0;
   right: 0;
 }
+h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+  text-shadow: #422800 2px 2px 0 0;
+}
 .container {
+  display: none;
+  margin: 200px;
   background-color: rgb(255, 255, 255);
   border-radius: 10px;
+  width: 200px;
+  height: 300px;
   box-shadow: #422800 4px 4px 0 0;
   color: #422800;
 }
 #city {
   border-radius: 2px;
-  width: auto;
-  height: auto;
   box-shadow: #422800 2px 2px 0 0;
   color: #422800;
 }
@@ -42,6 +47,7 @@ body {
   padding: 0 18px;
   line-height: 50px;
   text-align: center;
+utton>
   text-decoration: none;
   user-select: none;
   -webkit-user-select: none;
@@ -62,4 +68,56 @@ body {
     min-width: 120px;
     padding: 0 25px;
   }
+}
+p {
+  width: auto;
+  height: auto;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.button-city {
+  align-self: center;
+  background-color: #fff;
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: #41403e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Neucha, sans-serif;
+  font-size: 1rem;
+  line-height: 23px;
+  outline: none;
+  padding: .75rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-city:hover {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+.button-city:focus {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
 }

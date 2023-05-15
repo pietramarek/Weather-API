@@ -8,17 +8,26 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script
+      src="https://kit.fontawesome.com/bb4ccdf75e.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
     <h1>My Weather App</h1>
     <input type="text" id="city" placeholder="Enter city name" />
-    <button id="btn">Search</button>
-    <div class="container">
-      <p id="weather"></p>
-      <p id="temp"></p>
-      <p id="cloud"></p>
-      <p id="wind"></p>
+    <button id="btn">Search</button><br /><br />
+    <button class="button-city" id="bialystok">Białystok</button>
+    <button class="button-city" id="warszawa">Warszawa</button>
+    <button class="button-city" id="londyn">Londyn</button>
+    <div class="main">
+      <div class="container">
+        <p id="weather"></p>
+        <p id="temp"></p>
+        <p id="cloud"></p>
+        <p id="wind"></p>
+      </div>
     </div>
     <script src="script.js" type="module"></script>
   </body>
