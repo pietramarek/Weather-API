@@ -1,7 +1,5 @@
 body {
   background-color: #289bd0b0;
-  width: 100vw;
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,6 +11,18 @@ h1 {
   font-weight: 600;
   margin: 0;
   padding: 0;
+}
+
+.temp,
+.wind {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.temp i,
+.wind i {
+  margin-right: 10px; /* Dodaje odstęp między ikoną a tekstem */
 }
 
 .container {
@@ -122,13 +132,14 @@ p {
 .background {
   background-color: #fff;
   width: 500px;
-  height: 700px;
+  height: 500px;
   border-radius: 20px;
   box-shadow: 15px 28px 25px -18px rgba(0, 0, 0, 0.2);
 }
 
 .image {
   position: relative;
+  display: none;
   width: 130px;
   margin: auto;
 }

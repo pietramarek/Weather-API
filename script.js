@@ -41,7 +41,11 @@ document.getElementById("btn").addEventListener("click", async () => {
       data.weather[0].description == "zachmurzenie małe"
     ) {
       image.src = "images/partlycloudy.png";
-    } else if (data.weather[0].description == "słabe opady deszczu") {
+    } else if (
+      data.weather[0].description == "słabe opady deszczu" ||
+      data.weather[0].description == "umiarkowane opady deszczu" ||
+      data.weather[0].description == "mocne opady deszczu"
+    ) {
       image.src = "images/rainy.png";
     } else image.style.display = "none";
   } catch (error) {
