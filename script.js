@@ -32,13 +32,15 @@ document.getElementById("btn").addEventListener("click", async () => {
     document.getElementById("wind").innerHTML =
       "Prędkość wiatru: " + data.wind.speed;
     image.style.display = "block";
+
     if (data.weather[0].description === "bezchmurnie") {
       image.src = "images/sunny.png";
     } else if (data.weather[0].description === "zachmurzenie duże") {
       image.src = "images/cloudy.png";
     } else if (
       data.weather[0].description == "zachmurzenie umiarkowane" ||
-      data.weather[0].description == "zachmurzenie małe"
+      data.weather[0].description == "zachmurzenie małe" ||
+      data.weather[0].description == "zachmurzenie duże"
     ) {
       image.src = "images/partlycloudy.png";
     } else if (
@@ -49,6 +51,12 @@ document.getElementById("btn").addEventListener("click", async () => {
       image.src = "images/rainy.png";
     } else image.style.display = "none";
   } catch (error) {
-    console.error(error);
+    container.style.display = "none";
+    image.style.display = "none";
+    const div = document.querySelector(".main");
+    div.insertAdjacentHTML(
+      "beforeend",
+      "<p>Nie ma takiego miasta, wprowadź inne dane</p>"
+    );
   }
 });
