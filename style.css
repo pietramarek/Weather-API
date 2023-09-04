@@ -132,7 +132,7 @@ p {
 .background {
   background-color: #fff;
   width: 500px;
-  height: 500px;
+  height: 600px;
   border-radius: 20px;
   box-shadow: 15px 28px 25px -18px rgba(0, 0, 0, 0.2);
 }

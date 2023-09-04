@@ -3,39 +3,48 @@ import { API_KEY } from "./API_Key.js";
 const cityName = document.getElementById("city");
 const container = document.querySelector(".container");
 const image = document.querySelector(".image");
+const wind = document.getElementById("wind");
+const temp = document.getElementById("temp");
+const weather = document.getElementById("weather");
+const pressure = document.getElementById("preasure");
+const bialystok = document.getElementById("bialystok");
+const warszawa = document.getElementById("warszawa");
+const londyn = document.getElementById("londyn");
 
 // domyślne przyciski miast
-document.getElementById("bialystok").addEventListener("click", () => {
+bialystok.addEventListener("click", () => {
   cityName.value = "Białystok";
 });
-document.getElementById("warszawa").addEventListener("click", () => {
+warszawa.addEventListener("click", () => {
   cityName.value = "Warszawa";
 });
-document.getElementById("londyn").addEventListener("click", () => {
+londyn.addEventListener("click", () => {
   cityName.value = "Londyn";
 });
 //--------------
 
 document.getElementById("btn").addEventListener("click", async () => {
   container.style.display = "block";
-
   try {
     const response = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${cityName.value}&lang=pl&units=metric&appid=${API_KEY}`
     );
-    const data = await response.json();
-    console.log(data);
 
-    document.getElementById("weather").innerHTML = data.weather[0].description;
-    document.getElementById("temp").innerHTML =
-      "Temperatura: " + Math.round(data.main.temp) + "°C";
-    document.getElementById("wind").innerHTML =
-      "Prędkość wiatru: " + data.wind.speed;
+    const data = await response.json();
+    //console.log(data);
+
+    weather.innerHTML = data.weather[0].description;
+    temp.innerHTML = "Temperatura: " + Math.round(data.main.temp) + "°C";
+    wind.innerHTML = "Prędkość wiatru: " + data.wind.speed + "m/s";
+    pressure.innerHTML = "Ciśnienie: " + data.main.pressure + " hPa";
     image.style.display = "block";
 
     if (data.weather[0].description === "bezchmurnie") {
       image.src = "images/sunny.png";
-    } else if (data.weather[0].description === "zachmurzenie duże") {
+    } else if (
+      data.weather[0].description === "zachmurzenie duże" ||
+      data.weather[0].description == "pochmurnie"
+    ) {
       image.src = "images/cloudy.png";
     } else if (
       data.weather[0].description == "zachmurzenie umiarkowane" ||
@@ -53,10 +62,5 @@ document.getElementById("btn").addEventListener("click", async () => {
   } catch (error) {
     container.style.display = "none";
     image.style.display = "none";
-    const div = document.querySelector(".main");
-    div.insertAdjacentHTML(
-      "beforeend",
-      "<p>Nie ma takiego miasta, wprowadź inne dane</p>"
-    );
   }
 });
