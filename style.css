@@ -14,6 +14,8 @@ h1 {
 }
 
 .temp,
+.weather,
+.pressure,
 .wind {
   display: flex;
   align-items: center;
@@ -21,6 +23,8 @@ h1 {
 }
 
 .temp i,
+.pressure,
+.weather,
 .wind i {
   margin-right: 10px; /* Dodaje odstęp między ikoną a tekstem */
 }
@@ -28,7 +32,7 @@ h1 {
 .container {
   display: none;
   margin: auto;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(11, 214, 245);
   border: #41403e 2px solid;
   border-radius: 10px;
   width: 230px;
@@ -130,16 +134,10 @@ p {
 }
 
 .background {
-  background-color: #fff;
+  background-color: #1f6bc8;
+  z-index: 100;
   width: 500px;
   height: 600px;
   border-radius: 20px;
   box-shadow: 15px 28px 25px -18px rgba(0, 0, 0, 0.2);
-}
-
-.image {
-  position: relative;
-  display: none;
-  width: 130px;
-  margin: auto;
 }
